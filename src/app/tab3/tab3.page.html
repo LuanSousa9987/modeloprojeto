@@ -6,12 +6,59 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+<ion-content [fullscreen]="true">
+  <!-- Resto do código -->
+
+  <ion-header collapse="condense">
+    
+  </ion-header>
+<ion-content>
+  <form #fc="ngForm">
+  
+
+
+  
+    <ion-item>
+      <ion-label position="stacked">ID</ion-label>
+      <ion-input type="text" [(ngModel)]="produto._id" name="_id"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="produto.nome" name="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Categoria</ion-label>
+      <ion-input type="text" [(ngModel)]="produto.categoria" name="categoria"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-textarea [(ngModel)]="produto.descricao" name="descricao"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Quantidade</ion-label>
+      <ion-input type="number" [(ngModel)]="produto.quant" name="quant"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="produto.valor" name="valor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Ativo</ion-label>
+      <ion-checkbox [(ngModel)]="produto.ativo" name="ativo"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item class="pt-10">
+      {{produto.nome}}
+      <ion-button [disabled]="fc.invalid" slot="end" (click)="save()">Salvar</ion-button>
+      <ion-button color="danger" slot="end">Cancelar</ion-button>
+    </ion-item>
+  </form>
 </ion-content>
